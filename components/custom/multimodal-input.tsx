@@ -20,15 +20,16 @@ import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 
 const suggestedActions = [
+ 
   {
-    title: "Help me book a flight",
-    label: "from San Francisco to London",
-    action: "Help me book a flight from San Francisco to London",
+    title: "What projects have you worked on?",
+    label: "Key contributions and challenges solved",
+    action: "What are some notable projects you've worked on as a developer?",
   },
   {
-    title: "What is the status",
-    label: "of flight BA142 flying tmrw?",
-    action: "What is the status of flight BA142 flying tmrw?",
+    title: "What are your soft skills?",
+    label: "Teamwork, problem-solving, and adaptability",
+    action: "What soft skills do you bring to a team as a developer?",
   },
 ];
 
@@ -268,6 +269,6 @@ export function MultimodalInput({
       >
         <PaperclipIcon size={14} />
       </Button>
-    </div>
+    </div>   
   );
 }

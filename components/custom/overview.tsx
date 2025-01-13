@@ -20,19 +20,21 @@ export const Overview = () => {
           <MessageIcon />
         </p>
         <p>
-        Please ask me questions{" "}
+        <MessageIcon />
+         Welcome to Mila’s chatbot! I specialize in full-stack development with a focus on  {" "}
           <code className="rounded-sm bg-muted-foreground/15 px-1.5 py-0.5">
-            streamText
+            React
           </code>{" "}
-          function in the server and the{" "}
+          TypeScript{" "}
           <code className="rounded-sm bg-muted-foreground/15 px-1.5 py-0.5">
-            useChat
+          Node.js
           </code>{" "}
-          hook on the client to create a seamless chat experience.
+          Let’s chat about my experience and soft skills!
         </p>
+        
         <p>
           {" "}
-          You can learn more about the AI SDK by visiting the{" "}
+          Feel free to ask me about my projects, problem-solving approach, or how I collaborate in teams to deliver results.{" "}
           <Link
             className="text-blue-500 dark:text-blue-400"
             href="https://sdk.vercel.ai/docs"
