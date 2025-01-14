@@ -15,35 +15,19 @@ export const Overview = () => {
     >
       <div className="border-none bg-muted/50 rounded-2xl p-6 flex flex-col gap-4 text-zinc-500 text-sm dark:text-zinc-400 dark:border-zinc-700">
         <p className="flex flex-row justify-center gap-4 items-center text-zinc-900 dark:text-zinc-50">
-          <VercelIcon />
-          <span>+</span>
-          <MessageIcon />
+          <MessageIcon /> {" "} Welcome to Mila’s Chatbot! I  am a full-stack developer specializing in React, TypeScript, and Node.js. Feel free to ask questions ... 
         </p>
-        <p>
-        <MessageIcon />
-         Welcome to Mila’s chatbot! I specialize in full-stack development with a focus on  {" "}
-          <code className="rounded-sm bg-muted-foreground/15 px-1.5 py-0.5">
-            React
-          </code>{" "}
-          TypeScript{" "}
-          <code className="rounded-sm bg-muted-foreground/15 px-1.5 py-0.5">
-          Node.js
-          </code>{" "}
-          Let’s chat about my experience and soft skills!
-        </p>
-        
-        <p>
-          {" "}
-          Feel free to ask me about my projects, problem-solving approach, or how I collaborate in teams to deliver results.{" "}
+        {/* <p className="flex flex-row justify-center gap-4 items-center text-zinc-900 dark:text-zinc-50"> {" "}
+          Go to {" "}
           <Link
             className="text-blue-500 dark:text-blue-400"
-            href="https://sdk.vercel.ai/docs"
+            href="https://github.com/Mila2999"
             target="_blank"
           >
-            Docs
+            GitHub
           </Link>
           .
-        </p>
+        </p> */}
       </div>
     </motion.div>
   );

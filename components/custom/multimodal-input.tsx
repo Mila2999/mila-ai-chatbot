@@ -22,14 +22,14 @@ import { Textarea } from "../ui/textarea";
 const suggestedActions = [
  
   {
-    title: "What projects have you worked on?",
-    label: "Key contributions and challenges solved",
+    title: "Projects",
+    label: "What projects have you work on?",
     action: "What are some notable projects you've worked on as a developer?",
   },
   {
-    title: "What are your soft skills?",
-    label: "Teamwork, problem-solving, and adaptability",
-    action: "What soft skills do you bring to a team as a developer?",
+    title: "Soft skills",
+    label: "What are your soft skills?",
+    action: "How do these skills help you in a team setting or during problem-solving?",
   },
 ];
 
