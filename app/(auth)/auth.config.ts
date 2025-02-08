@@ -11,11 +11,14 @@ export const authConfig = {
   ],
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
-      let isLoggedIn = !!auth?.user;
+      let isLoggedIn = !!auth?.user; // auth -> object authentication ? -> undefined
+      // auth?.user -> null -> ! -> true -> !! -> false
+      // {user: name} -> ! -> false -> !! -> true
       let isOnChat = nextUrl.pathname.startsWith("/");
       let isOnRegister = nextUrl.pathname.startsWith("/register");
       let isOnLogin = nextUrl.pathname.startsWith("/login");
 
+      // if user  object exists and user in Login or Register Page
       if (isLoggedIn && (isOnLogin || isOnRegister)) {
         return Response.redirect(new URL("/", nextUrl));
       }
@@ -24,16 +27,16 @@ export const authConfig = {
         return true; // Always allow access to register and login pages
       }
 
-      if (isOnChat) {
-        if (isLoggedIn) return true;
-        return false; // Redirect unauthenticated users to login page
-      }
+      // if (isOnChat) {
+      //   if (isLoggedIn) return true;
+      //   return false; // Redirect unauthenticated users to login page
+      // }
 
       if (isLoggedIn) {
         return Response.redirect(new URL("/", nextUrl));
       }
 
-      return true;
+      return true;          
     },
   },
 } satisfies NextAuthConfig;
