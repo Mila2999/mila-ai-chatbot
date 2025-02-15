@@ -32,9 +32,9 @@ export const authConfig = {
       //   return false; // Redirect unauthenticated users to login page
       // }
 
-      if (isLoggedIn) {
-        return Response.redirect(new URL("/", nextUrl));
-      }
+      // if (isLoggedIn) {
+      //   return Response.redirect(new URL("/", nextUrl));
+      // }
 
       return true;          
     },
