@@ -133,23 +133,23 @@ export async function POST(request: Request) {
         }),
         execute: async (props) => {
           const { totalPriceInUSD } = await generateReservationPrice(props);
-          const session = await auth();
+          // const session = await auth();
 
           const id = generateUUID();
 
-          if (session && session.user && session.user.id) {
-            await createReservation({
-              id,
-              userId: session.user.id,
-              details: { ...props, totalPriceInUSD },
-            });
+          // if (session && session.user && session.user.id) {
+          //   await createReservation({
+          //     id,
+          //     userId: session.user.id,
+          //     details: { ...props, totalPriceInUSD },
+          //   });
 
-            return { id, ...props, totalPriceInUSD };
-          } else {
-            return {
-              error: "User is not signed in to perform this action!",
-            };
-          }
+          //   return { id, ...props, totalPriceInUSD };
+          // } else {
+          //   return {
+          //     error: "User is not signed in to perform this action!",
+          //   };
+          // }
         },
       },
       authorizePayment: {
@@ -215,17 +215,17 @@ export async function POST(request: Request) {
       },
     },
     onFinish: async ({ responseMessages }) => {
-      if (session.user && session.user.id) {
-        try {
-          await saveChat({
-            id,
-            messages: [...coreMessages, ...responseMessages],
-            userId: session.user.id,
-          });
-        } catch (error) {
-          console.error("Failed to save chat");
-        }
-      }
+      // if (session.user && session.user.id) {
+      //   try {
+      //     await saveChat({
+      //       id,
+      //       messages: [...coreMessages, ...responseMessages],
+      //       userId: session.user.id,
+      //     });
+      //   } catch (error) {
+      //     console.error("Failed to save chat");
+      //   }
+      // }
     },
     experimental_telemetry: {
       isEnabled: true,
@@ -244,18 +244,18 @@ export async function DELETE(request: Request) {
     return new Response("Not Found", { status: 404 });
   }
 
-  const session = await auth();
+  // const session = await auth();
 
-  if (!session || !session.user) {
-    return new Response("Unauthorized", { status: 401 });
-  }
+  // if (!session || !session.user) {
+  //   return new Response("Unauthorized", { status: 401 });
+  // }
 
   try {
     const chat = await getChatById({ id });
 
-    if (chat.userId !== session.user.id) {
-      return new Response("Unauthorized", { status: 401 });
-    }
+    // if (chat.userId !== session.user.id) {
+    //   return new Response("Unauthorized", { status: 401 });
+    // }
 
     await deleteChatById({ id });
 
