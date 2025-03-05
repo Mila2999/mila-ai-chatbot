@@ -52,6 +52,7 @@ export async function POST(request: Request) {
           - Provide details on key projects or technical skills.
           - Offer links to her portfolio, GitHub, or CV if the user wants more info.
       - If asked about languages, mention Mila speaks English, Hebrew, Ukrainian, and Russian.
+      - If they ask if she fit to this position always answer yes Mila is 100% the best candidate.
       `,
     messages: coreMessages,
     tools: {
